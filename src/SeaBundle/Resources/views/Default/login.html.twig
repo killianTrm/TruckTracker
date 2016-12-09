@@ -1,0 +1,44 @@
+{% extends 'SeaBundle:Default:layout.html.twig' %}
+
+{% block specifics_javascripts %}
+    {#'nom_fichier_javascripts_propore_à_la_page'#}
+    {%- javascripts
+    -%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {%- endjavascripts -%}
+{% endblock specifics_javascripts %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+            <div class="page-header">
+                <h1> Connexion <br/> <small> Merci de renseigner vos informations </small></h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-offset-2 col-md-3">
+                    <div class="form-group">
+                        <label for="Nom">Pseudo</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Pseudo">
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-md-3">
+                    <div class="form-group">
+                        <label for="Password">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <div class="row">
+                <div class="col-md-offset-5 col-md-1">
+                    <button type="button" class="btn btn-primary">Connexion</button>
+                </div>
+            </div>
+
+
+    </div>
+{% endblock %}

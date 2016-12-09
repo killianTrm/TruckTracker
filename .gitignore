@@ -1,0 +1,29 @@
+/web/bundles/
+
+/app/cache/*
+/app/logs/*
+
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+
+/app/phpunit.xml
+/app/config/parameters.yml
+/app/bootstrap.php.cache
+
+/build/
+/vendor/
+/vendor/*
+/bin/
+
+/composer.phar
+
+.idea
+.DS_Store
+Supprimerait .gitignore
+Supprimerait README.md
+Supprimerait app/
+Supprimerait composer.json
+Supprimerait composer.lock
+Supprimerait src/
+Supprimerait tests/
+Supprimerait web/

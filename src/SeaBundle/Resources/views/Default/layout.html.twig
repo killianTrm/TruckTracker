@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
+
+    {% stylesheets '@bootstrap_css' %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="all" />
+    {% endstylesheets %}
+
+    {% block specifics_stylesheets %}
+        {% stylesheets '@style_css' %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="all" />
+        {% endstylesheets %}
+    {% endblock specifics_stylesheets %}
+
+    <title>{% block title %}{% endblock %} - SEA</title>
+
+</head>
+
+<header class="panel-heading">
+    {% include "SeaBundle:Default:header.html.twig" %}
+</header>
+<body class="panel-body">
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+
+
+{%- javascripts
+'@jquery_js'
+'@bootstrap_js'
+'@bootstrap_validator_js'
+-%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{%- endjavascripts -%}
+
+{%block specifics_javascripts%}
+{%endblock specifics_javascripts%}
+
+</html>

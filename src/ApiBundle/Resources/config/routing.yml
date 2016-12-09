@@ -1,0 +1,58 @@
+# ASSOCIATIONS
+api_associations:
+  path: /associations
+  defaults: { _controller: ApiBundle:Association:getAssociations }
+  methods: [GET]
+
+api_association:
+  path: /associations/{associationId}
+  defaults: { _controller: ApiBundle:Association:getAssociation }
+  methods: [GET]
+  requirements:
+      associationId: \d+
+
+# CATEGORIES
+api_categories:
+  path: /categories
+  defaults: { _controller: ApiBundle:Category:getCategories }
+  methods: [GET]
+
+api_category:
+  path: /categories/{categoryId}
+  defaults: { _controller: ApiBundle:Category:getCategory}
+  methods: [GET]
+  requirements:
+      categoryId: \d+
+
+# ADDRESSES
+api_addresses:
+  path: /addresses
+  defaults: { _controller: ApiBundle:Address:getAddresses }
+  methods: [GET]
+
+api_address:
+  path: /addresses/{addressId}
+  defaults: { _controller: ApiBundle:Address:getAddress }
+  methods: [GET]
+  requirements:
+      addressId: \d+
+
+# USERS
+api_users:
+  path: /users
+  defaults: { _controller: ApiBundle:User:getUsers }
+  methods: [GET]
+
+api_user:
+  path: /users/{userId}
+  defaults: { _controller: ApiBundle:User:getUser }
+  methods: [GET]
+  requirements:
+      userId: \d+
+
+api_user_delete:
+  path: /users/{userId}
+  defaults: { _controller: ApiBundle:User:getUser }
+  methods: [DELETE]
+  requirements:
+      userId: \d+
