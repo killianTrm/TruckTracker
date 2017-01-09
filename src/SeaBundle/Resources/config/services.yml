@@ -1,8 +1,0 @@
-services:
-    api_service:
-        class: SeaBundle\Service\ApiService
-        arguments: ["@router","@logger","%backend_url%", "%backend_proxy_host%"]
-
-    association_service:
-        class: SeaBundle\Service\AssociationService
-        arguments: ['@api_service']
