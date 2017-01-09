@@ -1,0 +1,32 @@
+{
+  "name": "Supervision",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Angular application supervision",
+  "keywords": [],
+  "dependencies": {
+    "amqp": "*",
+    "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "angular-socket-io": "^0.7.0",
+    "body-parser": "^1.14.2",
+    "bootstrap": "^3.3.6",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.3",
+    "express-session": "^1.13.0",
+    "http": "0.0.0",
+    "jquery": "^2.1.4",
+    "leaflet": "^0.7.7",
+    "method-override": "^2.3.5",
+    "rabbit.js": "^0.4.4",
+    "socket.io": "^1.4.4"
+  },
+  "scripts": {},
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/anonymous node/sails user/Supervision.git"
+  },
+  "author": "Les fr�res",
+  "license": ""
+}

@@ -1,0 +1,58 @@
+<ion-view view-title="Need help" >
+
+  <ion-content ng-controller="AccountCtrl">
+<div class="list">
+
+	Your informations:
+	<ul>
+		<li>{{user.firstname}} {{user.lastname}}
+		</li>
+		<li>Immatricul : {{vehicle.immatricul.immatricul}}
+		</li>
+		<li>Geolocation : {{vehicle.geolocalisation.latitude}} || {{vehicle.geolocalisation.longitude}}
+		</li>
+		<li>Level breakdown : {{vehicle.levelBreakdown.levelBreakdown}}
+		</li>
+		<li>State vehicule : {{vehicle.stateVehicle.stateVehicle}}
+		</li>
+	</ul>
+
+
+    <form id="formAskHelp">
+		<label class="item item-input item-select">
+			<div class="input-label">
+				Level breakdown
+			</div>
+			<select ng-model="fah.levelBreakdown "  >
+				<option ng-repeat="l in getlvlBreakdown" value="{{l}}">{{l.levelBreakdown}}</option>
+			</select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+				State vehicle
+			</div>
+			<select ng-model="fah.sv">
+				<option ng-repeat="sv in getsv" value="{{sv}}">{{sv.stateVehicle}}</option>
+			</select>
+
+		</label>
+	</form>
+
+
+</div>
+
+
+<button class="button button-full button-calm" type="submit" ng-click="formAskHelp(fah)" >
+Update
+</button>
+
+<button class="button button-full button-positive" ng-controller="AccountCtrl" ng-click="goOut()">
+Go out
+</button>
+
+
+<button class="button button-full button-assertive" ng-controller="DashCtrl" ng-click="deconnection()">
+  Disconnect
+</button>
+  </ion-content>
+</ion-view>

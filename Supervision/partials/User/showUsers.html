@@ -1,0 +1,123 @@
+
+
+<div class="myContent">
+
+    <div class="form-group">
+   			Show User :
+
+		<table class="table table-striped">
+			<th>
+				Prenom
+			</th>
+						<th>
+				Nom
+			</th>
+					<th>
+				Skill
+			</th>
+
+      <th>
+        Account Type
+      </th>
+      <th>
+        Action
+      </th>
+
+			<tr ng-repeat="u in users">
+   				<td >
+  					{{u.firstname}}
+  				</td>
+  				<td>
+  					{{u.lastname}}
+  				</td>
+  				<td>
+  					{{u.skill.levelSkill}}
+  				</td>
+          <td>
+            {{u.accountType.accountType}}
+          </td>
+          <td>
+            <span class="glyphicon glyphicon-trash" ng-click="deleteUser(u)"></span>
+          </td>
+        
+  		</tr>
+	
+		</table>
+    </div>
+
+
+
+</div>
+
+
+
+<button type="button" class="btn btn-primary" ng-click="showFormAddUser()">{{buttonShowHide}}</button>
+
+<div id="formUser" ng-show="showForm">
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="inputlogin3" class="col-sm-2 control-label">Login</label>
+      <div class="col-sm-10">
+        <input type="login" class="form-control" id="inputlogin3" placeholder="login" ng-model="user.login">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="user.password">
+      </div>
+    </div>
+   
+    <div class="form-group">
+      <label for="inputLastname" class="col-sm-2 control-label">Lastname</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputLastname" placeholder="Lastname" ng-model="user.lastname">
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="inputFirstname" class="col-sm-2 control-label">Firstname</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputFirstName" placeholder="Firstname" ng-model="user.firstname">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="inputLevelSkill" class="col-sm-2 control-label">Level Skill</label>
+      <div class="col-sm-10">
+        <select ng-model="user.skill" id="inputLevelSkill">
+        <option ng-repeat="sk in skill"  value="{{sk.id}}">{{sk.levelSkill}}</option>
+        </select>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="inputAccountType" class="col-sm-2 control-label">Account Type</label>
+      <div class="col-sm-10">
+        <select ng-model="user.accountType" id="inputAccountType">
+          <option ng-repeat="ac in accountType"  value="{{ac.id}}">{{ac.accountType}}</option>
+        </select>
+      </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" ng-click="registerUser(user)"  class="btn btn-info">Register</button>
+      </div>
+    </div>
+  </form>
+
+
+
+</div>
+
+

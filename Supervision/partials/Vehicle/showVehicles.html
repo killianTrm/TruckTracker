@@ -1,0 +1,140 @@
+<div class="myContent">
+
+    <div class="form-group">
+        <h1></h1>
+
+
+        <td>
+            <div style="height:35px;width:35px ;border-radius:50%; background-color:{{v.stateVehicle.color}};"></div>
+        </td>
+        </tr>
+        </table>
+    </div>
+
+
+    <div id="formVehicle" ng-show="showForm">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputImmatricul" class="col-sm-2 control-label">Immatriculation</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputImmatricul" placeholder="Immatriculation"
+                           ng-model="vehicle.immatricul.immatricul">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" ng-click="registerVehicle(vehicle)" class="btn btn-info">Create !</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-5">
+        <h2>Vehicles
+            <button type="button" class="btn btn-primary" ng-click="showFormAddVehicle()">{{buttonShowHide}}</button>
+        </h2>
+        <table class="table table-striped">
+            <th>
+                Id Vehicle
+            </th>
+            <th>
+                Immatricul
+            </th>
+            <th>
+                Firstname
+            </th>
+            <th>
+                Lastname
+            </th>
+            <th>
+                Etat
+            </th>
+            <th>
+                Action
+            </th>
+            <tr ng-repeat="v in vehicle" ng-click="gotoMap(v.geolocalisation.latitude,v.geolocalisation.longitude)"
+                ng-show="v.usedBy.accountType=='driver'">
+                <td>
+                    {{v.id}}
+                </td>
+                <td>
+                    {{v.immatricul.immatricul}}
+                </td>
+                <td>
+                    {{v.usedBy.firstname}}
+                </td>
+                <td>
+                    {{v.usedBy.lastname}}
+                </td>
+                <td>
+                    <div title={{v.stateVehicle.stateVehicle}}
+                         style="height:25px;width:25px ;border-radius:50%; background-color:{{v.stateVehicle.color}};"></div>
+                </td>
+
+                <td>
+                    <span class="glyphicon glyphicon-trash" ng-click="deleteVehicle(v)" style="cursor:pointer"></span>
+
+
+                </td>
+            </tr>
+
+        </table>
+        <hr>
+        <h2>Technicians <a href="http://localhost:5000/#/showUsers/" class="btn btn-primary">Add</a></h2>
+        <table class="table table-striped">
+            <th>
+                Firstname
+            </th>
+            <th>
+                Lastname
+            </th>
+            <th>
+                Skill level
+            </th>
+            <th>
+                Assigner
+            </th>
+            <th>Action</th>
+
+            <tr ng-repeat="u in techniciens ">
+                <td>
+                    {{u.firstname}}
+                </td>
+                <td>
+                    {{u.lastname}}
+                </td>
+                <td>
+                    {{u.skill.levelSkill}}
+                </td>
+                <td>
+					<span ng-if="u.text != 'Disponible'">
+					{{u.text}}
+					</span>
+					<span ng-if="u.text == 'Disponible'">
+						<form>
+                            <select ng-model="action.vehicle" id="vehicleAssigne" name="vehicleAssigne">
+                                <option ng-repeat="v in vehicle" value="{{v}}">{{v.immatricul.immatricul}}</option>
+                            </select>
+
+                            <input type="submit" ng-click="assigner(action, u.id, 2)" value="OK"/>
+                        </form>
+					</span>
+                    {{immatriculAssigned}}
+                </td>
+                <td>
+                    <button class="btn btn-default" ng-click="trouver()">Trouver</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+    <div class="col-md-7">
+        <div id="map" style="height:600px;width:100%"></div>
+    </div>
+
+
+</div>
+

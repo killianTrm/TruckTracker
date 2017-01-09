@@ -1,0 +1,44 @@
+<ion-view view-title="Truck">
+  <ion-content ng-controller="TruckCtrl">
+      
+    <ion-list ng-if="!getTfromU">
+    <h2>Choose a truck (tap on)</h2>
+      <ion-item ng-repeat="dt in getDispoTruck" ng-click="chooseTruck(dt)">
+      {{dt.immatricul.immatricul}} | {{dt.stateVehicle.stateVehicle}}
+      </ion-item>
+    </ion-list>
+    <div ng-if="getTfromU">
+      You are in this truck :
+      <table class="table">
+        <th>
+          Id vehicle
+        </th>
+        <th>
+          Immatricul
+        </th>
+        <th>
+          State vehicle
+        </th>
+        <th>
+          Geolocalisation
+        </th>
+        <tr>
+          <td>
+            {{getTfromU.id}}
+          </td>
+          <td>
+            {{getTfromU.immatricul.immatricul}}
+          </td>
+                    <td>
+            {{getTfromU.stateVehicle.stateVehicle}}
+          </td>
+          <td>
+            {{getTfromU.geolocalisation.longitude}} | {{getTfromU.geolocalisation.latitude}} 
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+  </ion-content>
+</ion-view>
