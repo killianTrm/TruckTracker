@@ -44,8 +44,9 @@ module.exports.connections = {
   apiSocieteTransport: {
     adapter: 'sails-mysql',
     host: 'localhost',
-    user: 'charly',
-    password: 'charly',
+    port: 8889,
+    user: 'root',
+    password: 'root',
     database: 'apisocietetransport'
   },
 
