@@ -1,7 +1,7 @@
 /**
- * LevelBreakdownController
+ * DeliveryController
  *
- * @description :: Server-side logic for managing levelbreakdowns
+ * @description :: Server-side logic for managing deliveries
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 

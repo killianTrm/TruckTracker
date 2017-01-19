@@ -1,7 +1,7 @@
 /**
- * StateActionController
+ * TruckController
  *
- * @description :: Server-side logic for managing stateactions
+ * @description :: Server-side logic for managing trucks
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 

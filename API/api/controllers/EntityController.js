@@ -1,7 +1,7 @@
 /**
- * SkillController
+ * EntityController
  *
- * @description :: Server-side logic for managing skills
+ * @description :: Server-side logic for managing entities
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 

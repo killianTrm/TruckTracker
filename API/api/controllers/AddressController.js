@@ -1,7 +1,7 @@
 /**
- * ImmatriculController
+ * AddressController
  *
- * @description :: Server-side logic for managing immatriculs
+ * @description :: Server-side logic for managing addresses
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
